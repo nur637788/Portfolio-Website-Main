@@ -1,0 +1,85 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #0f172a;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.contact {
+  padding: 40px;
+  text-align: center;
+}
+
+form {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  margin: 20px auto;
+}
+
+.field, .message {
+  position: relative;
+  margin: 15px 0;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+}
+
+button {
+  background: #ec4899;
+  border: none;
+  padding: 10px 20px;
+  color: white;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #db2777;
+}
+
+/* Admin Page */
+.hidden { display: none; }
+
+.login-box {
+  width: 300px;
+  margin: 100px auto;
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.login-box input {
+  display: block;
+  margin: 10px auto;
+  padding: 8px;
+  width: 90%;
+  border-radius: 6px;
+  border: none;
+}
+
+table {
+  width: 90%;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background: #1e293b;
+}
+
+th, td {
+  padding: 10px;
+  border-bottom: 1px solid #475569;
+}
+
+#logout-btn {
+  display: block;
+  margin: 20px auto;
+  background: crimson;
+}
