@@ -1,11 +1,17 @@
 body {
   font-family: Arial, sans-serif;
-  background: #0f172a;
-  color: white;
+  background: #e9eaee;
+  color: rgb(245, 237, 237);
   margin: 0;
   padding: 0;
 }
-
+h2{
+  text-align: center;
+}
+.h2{
+  text-align: center;
+  color: black;
+}
 .contact {
   padding: 40px;
   text-align: center;
@@ -29,7 +35,7 @@ input, textarea {
   padding: 10px;
   border: none;
   border-radius: 8px;
-  outline: none;
+  
 }
 
 button {
@@ -75,11 +81,30 @@ table {
 
 th, td {
   padding: 10px;
-  border-bottom: 1px solid #475569;
+  border: 1px solid #e7ebef;
+  text-align: center;
+}
+
+.delete-btn {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+.delete-btn:hover {
+  background: darkred;
 }
 
 #logout-btn {
   display: block;
   margin: 20px auto;
   background: crimson;
+}
+#logout-btn:hover{
+  background-color: rgb(206, 3, 3);
+  scale: calc(0.9);
+  transition-duration: 500ms;
 }

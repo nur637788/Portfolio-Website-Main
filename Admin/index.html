@@ -1,13 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Panel</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer src="admin.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Abdun Nur, portfolio, Nur, full stack dev, personal portfolio lifecodes, portfolio design, portfolio website, personal portfolio" />
+    <meta name="description" content="Welcome to Nur's Portfolio. Full-Stack Web Developer and Android App Developer" />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
+    <link id="favicon" rel="shortcut icon" href="../assets/images/favicon.png" type="image/x-png">
+    <title>Portfolio-Admin | Abdun Nur</title>
 </head>
 <body>
+
+
+
   <div class="login-box" id="login-box">
     <h2>Admin Login</h2>
     <input type="text" id="username" placeholder="Username">
@@ -17,7 +25,7 @@
   </div>
 
   <div class="admin-container hidden" id="admin-container">
-    <h2>📩 Submitted Messages</h2>
+    <h2 class="h2">📩 Submitted Messages</h2>
     <table>
       <thead>
         <tr>
@@ -31,5 +39,7 @@
     </table>
     <button id="logout-btn">Logout</button>
   </div>
+
+  <script src="admin.js"></script>
 </body>
 </html>

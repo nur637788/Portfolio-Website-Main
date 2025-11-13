@@ -1,52 +1,72 @@
-const loginBox = document.getElementById('login-box');
-const adminContainer = document.getElementById('admin-container');
-const loginBtn = document.getElementById('login-btn');
-const logoutBtn = document.getElementById('logout-btn');
-const errorMsg = document.getElementById('error-msg');
-const dataTable = document.getElementById('data-table');
+// Simple Admin Login System
+const loginBox = document.getElementById("login-box");
+const adminContainer = document.getElementById("admin-container");
+const loginBtn = document.getElementById("login-btn");
+const logoutBtn = document.getElementById("logout-btn");
+const errorMsg = document.getElementById("error-msg");
+const dataTable = document.getElementById("data-table");
 
-// Demo admin login info
-const ADMIN_USER = "admin";
-const ADMIN_PASS = "12345";
+// Default admin credentials
+const ADMIN_USERNAME = "nur";
+const ADMIN_PASSWORD = "nur637788";
 
-loginBtn.addEventListener('click', () => {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+// Sample data (তুমি চাইলে LocalStorage বা Firebase থেকেও নিতে পারো)
+let messages = JSON.parse(localStorage.getItem("messages")) || [
+    { name: "Nur", email: "mdnoyon637788@gmail.com", phone: "01749535688", message: "Hello, I need a website!" },
+    { name: "Abdun Nur", email: "mdnoyon6363@outlook.com", phone: "01759305663", message: "Portfolio looks amazing!" }
+];
 
-    if (username === ADMIN_USER && password === ADMIN_PASS) {
-        localStorage.setItem('loggedIn', 'true');
-        showAdminPanel();
+// 🔹 Login system
+loginBtn.addEventListener("click", () => {
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
+        loginBox.classList.add("hidden");
+        adminContainer.classList.remove("hidden");
+        loadMessages();
     } else {
-        errorMsg.textContent = "❌ Wrong Username or Password!";
+        errorMsg.textContent = "❌ Invalid Username or Password!";
     }
 });
 
-logoutBtn.addEventListener('click', () => {
-    localStorage.removeItem('loggedIn');
-    location.reload();
+// 🔹 Logout button
+logoutBtn.addEventListener("click", () => {
+    adminContainer.classList.add("hidden");
+    loginBox.classList.remove("hidden");
 });
 
-function showAdminPanel() {
-    loginBox.classList.add('hidden');
-    adminContainer.classList.remove('hidden');
 
-    const messages = JSON.parse(localStorage.getItem('messages')) || [];
+// 🔹 Load messages in table
+function loadMessages() {
+    dataTable.innerHTML = "";
 
-    if (messages.length === 0) {
-        dataTable.innerHTML = `<tr><td colspan="4">No messages yet</td></tr>`;
-    } else {
-        dataTable.innerHTML = messages.map(msg => `
-      <tr>
-        <td>${msg.name}</td>
-        <td>${msg.email}</td>
-        <td>${msg.phone}</td>
-        <td>${msg.message}</td>
-      </tr>
-    `).join('');
-    }
+    messages.forEach((msg, index) => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+      <td>${msg.name}</td>
+      <td>${msg.email}</td>
+      <td>${msg.phone}</td>
+      <td>${msg.message}</td>
+      <td><button class="delete-btn" data-index="${index}">🗑</button></td>
+    `;
+        dataTable.appendChild(row);
+    });
+
+    // Delete button handler
+    document.querySelectorAll(".delete-btn").forEach((btn) => {
+        btn.addEventListener("click", (e) => {
+            const index = e.target.getAttribute("data-index");
+            deleteMessage(index);
+        });
+    });
 }
 
-// Check if already logged in
-if (localStorage.getItem('loggedIn') === 'true') {
-    showAdminPanel();
+// 🔹 Delete message function
+function deleteMessage(index) {
+    if (confirm("Are you sure you want to delete this message?")) {
+        messages.splice(index, 1);
+        localStorage.setItem("messages", JSON.stringify(messages));
+        loadMessages();
+    }
 }

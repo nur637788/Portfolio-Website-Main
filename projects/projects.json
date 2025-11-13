@@ -42,7 +42,7 @@
   {
     "name": "Home Decor",
     "desc": "Home Decor & Furniture Collection website is using React, Tailwind, JavaScript, Dynamic Routing, Animation.",
-    "image": "instagrammern",
+    "image": "home-decor",
     "category": "mern",
     "links": {
       "view": "https://furniture-websitebd.netlify.app/",
@@ -52,7 +52,7 @@
   {
     "name": "Institute WebApp",
     "desc": "Institute website with Admin Dashboard and Login. MERN Stack WebApp, ready to use for Institute.",
-    "image": "flipkartmern",
+    "image": "institute",
     "category": "mern",
     "links": {
       "view": "https://adataladm.netlify.app/",
@@ -72,7 +72,7 @@
   {
     "name": "GoodFood Website",
     "desc": "Fronend project dashboard which is collection of projects build with React, Tailwind, JavaScript, Api Intigration .",
-    "image": "reactprojects",
+    "image": "goodfood",
     "category": "mern",
     "links": {
       "view": "https://goodfoodbd.netlify.app/",
@@ -82,7 +82,7 @@
   {
     "name": "Skill Larning Website",
     "desc": "This website is specially build to showcase. With all features and OTP authentication and Cashfree payment gateway.",
-    "image": "flipkartphp",
+    "image": "skill-larning",
     "category": "lamp",
     "links": {
       "view": "https://nurskillzone.netlify.app/",
@@ -95,8 +95,8 @@
     "image": "jspro",
     "category": "basicweb",
     "links": {
-      "view": "https://jigar-sable.github.io/JavaScript-Projects",
-      "code": "https://github.com/jigar-sable/JavaScript-Projects"
+      "view": "https://javascript-main.netlify.app/",
+      "code": "https://github.com/nur637788/JavaScript-Projects-Main"
     }
   },
   {
